@@ -12,12 +12,32 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
-    color: white;
     line-height: 1.6;
     overflow-x: hidden;
-    background: #18191A;
+    background: #ffffff;
     font-size: 0.9rem;
 }
+
+.navbar{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 22px;
+}
+
+
+.image_profile{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.title{
+    padding-top: 40px;
+}
+
 
 @media (max-width: 991px){
     .sidebar{
