@@ -18,3 +18,10 @@ body{
     background: #18191A;
     font-size: 0.9rem;
 }
+
+@media (max-width: 991px){
+    .sidebar{
+        background-color: #242526;
+        backdrop-filter: blur(10px);
+    }
+}
