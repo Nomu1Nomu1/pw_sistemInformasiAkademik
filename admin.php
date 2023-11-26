@@ -43,10 +43,7 @@
                             <a class="nav-link" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="mahasiswa.php">Mahasiswa </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="">Wali Mahasiswa</a>
+                            <a class="nav-link active" href="admin.php">Admin</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
@@ -66,27 +63,27 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5">Data Wali Mahasiswa</h2>
+        <h2 class="title text-center mb-5">Data Mahasiswa</h2>
         <table class="table table-striped mt-3">
             <thead>
                 <tr>
-                    <th>ID Wali</th>
-                    <th>Nama Wali</th>
+                    <th>ID</th>
+                    <th>NIM</th>
+                    <th>Nama</th>
                     <th>Jenis Kelamin</th>
+                    <th>Jurusan</th>
                     <th>Alamat</th>
+                    <th>ID Wali</th>
                 </tr>
             </thead>
             <tbody>
-                <td>2123535561</td>
+                <td>37255</td>
+                <td>1526492378</td>
                 <td>Nomu Nomu</td>
                 <td>Laki-Laki</td>
+                <td>Informatika</td>
                 <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-            </tbody>
-            <tbody>
-                <td>2123535561</td>
-                <td>Nomu Nomu</td>
-                <td>Laki-Laki</td>
-                <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
+                <td>2</td>
             </tbody>
         </table>
     </div>

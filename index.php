@@ -66,29 +66,8 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5">Data Mahasiswa</h2>
-        <table class="table table-striped mt-3">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>NIM</th>
-                    <th>Nama</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Jurusan</th>
-                    <th>Alamat</th>
-                    <th>ID Wali</th>
-                </tr>
-            </thead>
-            <tbody>
-                <td>37255</td>
-                <td>1526492378</td>
-                <td>Nomu Nomu</td>
-                <td>Laki-Laki</td>
-                <td>Informatika</td>
-                <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-                <td>2</td>
-            </tbody>
-        </table>
+        <h2 class="title text-center mb-5">Home Page</h2>
+    
     </div>
 
 </body>
