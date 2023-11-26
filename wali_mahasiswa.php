@@ -73,6 +73,7 @@ $data_wali = select("SELECT * FROM wali_mhs");
                                 Profile
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="admin.php"><i class="uil uil-signin"></i>Admin</i></a></li>
                                 <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Logout</i></a></li>
                             </ul>
                         </li>

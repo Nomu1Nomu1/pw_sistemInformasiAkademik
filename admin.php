@@ -150,6 +150,7 @@ $data_mhs = select("SELECT * FROM mahasiswa");
                 </tbody>
             </table>
         </section>
+        <a class="btn btn-primary mt-3" href="#" role="button">Tambah Data</a>
     </div>
 
 </body>
