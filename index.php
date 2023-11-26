@@ -18,7 +18,7 @@
 
 <body class="vh-100 overflow-hidden">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #242526;">
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand" href="#">Informasi Akademik</a>
@@ -40,13 +40,13 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="mahasiswa.html">Mahasiswa </a>
+                            <a class="nav-link" href="mahasiswa.php">Mahasiswa </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="wali_mahasiswa.html">Wali Mahasiswa</a>
+                            <a class="nav-link" href="wali_mahasiswa.php">Wali Mahasiswa</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
@@ -66,31 +66,8 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5">Data Mahasiswa</h2>
-        <table class="table table-striped text-center mt-3">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>NIM</th>
-                    <th>Nama</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Jurusan</th>
-                    <th>Alamat</th>
-                    <th>ID Wali</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <td>37255</td>
-                <td>1526492378</td>
-                <td>Nomu Nomu</td>
-                <td>Laki-Laki</td>
-                <td>Informatika</td>
-                <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-                <td>2</td>
-                <td><a href="" class="btn sm">Edit</a></td>
-            </tbody>
-        </table>
+        <h2 class="title text-center mb-5">Home Page</h2>
+    
     </div>
 
 </body>

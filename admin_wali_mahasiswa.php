@@ -76,36 +76,38 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="admin.html">Admin Mahasiswa</a>
+                            <a class="nav-link" href="admin.php">Admin Mahasiswa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="admin_wali_mahasiswa.html">Admin Wali Mahasiswa</a>
+                            <a class="nav-link active" aria-current="page" href="admin_wali_mahasiswa.php">Admin Wali Mahasiswa</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <table class="table table-striped text-center mt-3">
+            <table class="table table-striped mt-3">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>NIM</th>
-                        <th>Nama</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Jurusan</th>
-                        <th>Alamat</th>
                         <th>ID Wali</th>
+                        <th>Nama Wali</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Alamat</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <td>37255</td>
-                    <td>1526492378</td>
+                    <td>2123535571</td>
                     <td>Nomu Nomu</td>
                     <td>Laki-Laki</td>
-                    <td>Informatika</td>
                     <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-                    <td>2</td>
+                    <td><a href="" class="btn sm">Edit</a></td>
+                    <td><a href="" class="btn sm danger">Delete</a></td>
+                </tbody>
+                <tbody>
+                    <td>2123535561</td>
+                    <td>Nomu Nomu</td>
+                    <td>Laki-Laki</td>
+                    <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
                     <td><a href="" class="btn sm">Edit</a></td>
                     <td><a href="" class="btn sm danger">Delete</a></td>
                 </tbody>
