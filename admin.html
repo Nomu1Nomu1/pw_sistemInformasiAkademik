@@ -46,16 +46,15 @@
                             <a class="nav-link active" href="admin.php">Admin</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Profile
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Login</i></a></li>
                             </ul>
                         </li>
-                        <img src="image/Aqua Minato.jpg" alt="Logo" class="image_profile justify-content-end" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                        <img src="image/Aqua Minato.jpg" alt="Logo" class="image_profile justify-content-end" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     </ul>
                 </div>
             </div>
@@ -63,29 +62,55 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5">Data Mahasiswa</h2>
-        <table class="table table-striped mt-3">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>NIM</th>
-                    <th>Nama</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Jurusan</th>
-                    <th>Alamat</th>
-                    <th>ID Wali</th>
-                </tr>
-            </thead>
-            <tbody>
-                <td>37255</td>
-                <td>1526492378</td>
-                <td>Nomu Nomu</td>
-                <td>Laki-Laki</td>
-                <td>Informatika</td>
-                <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-                <td>2</td>
-            </tbody>
-        </table>
+        <h2 class="title text-center mb-5">Admin Panel</h2>
+        <section class="admin_panel">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mahasiswa</button>
+
+            <div class="menu offcanvas offcanvas-start text-white" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin.html">Admin Mahasiswa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_wali_mahasiswa.html">Admin Wali Mahasiswa</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <table class="table table-striped text-center mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Jurusan</th>
+                        <th>Alamat</th>
+                        <th>ID Wali</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>37255</td>
+                    <td>1526492378</td>
+                    <td>Nomu Nomu</td>
+                    <td>Laki-Laki</td>
+                    <td>Informatika</td>
+                    <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
+                    <td>2</td>
+                    <td><a href="" class="btn sm">Edit</a></td>
+                    <td><a href="" class="btn sm danger">Delete</a></td>
+                </tbody>
+            </table>
+        </section>
     </div>
 
 </body>
