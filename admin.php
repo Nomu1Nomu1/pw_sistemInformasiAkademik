@@ -1,3 +1,23 @@
+<?php
+
+include 'connection.php';
+function select($querry)
+{
+    global $db;
+    $result = mysqli_query($db, $querry);
+    $rows = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+
+    return $rows;
+}
+
+$data_mhs = select("SELECT * FROM mahasiswa");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,16 +82,17 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5">Admin Panel</h2>
+        <h2 class="title text-center mb-5" style="padding-top: 40px;">Admin Panel</h2>
         <section class="admin_panel">
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mahasiswa</button>
 
-            <div class="menu offcanvas offcanvas-start text-white" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-                aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="menu offcanvas offcanvas-start text-white" data-bs-scroll="true" tabindex="-1"
+                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
-                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -99,15 +120,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td>37255</td>
-                    <td>1526492378</td>
-                    <td>Nomu Nomu</td>
-                    <td>Laki-Laki</td>
-                    <td>Informatika</td>
-                    <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-                    <td>2</td>
-                    <td><a href="" class="btn sm">Edit</a></td>
-                    <td><a href="" class="btn sm danger">Delete</a></td>
+                    <?php foreach ($data_mhs as $mhs): ?>
+                        <tr>
+                            <td>
+                                <?= $mhs['id_mhs'] ?>
+                            </td>
+                            <td>
+                                <?= $mhs['nim'] ?>
+                            </td>
+                            <td>
+                                <?= $mhs['nama'] ?>
+                            </td>
+                            <td>
+                                <?= $mhs['jenis_kelamin'] ?>
+                            </td>
+                            <td>
+                                <?= $mhs['jurusan'] ?>
+                            </td>
+                            <td>
+                                <?= $mhs['alamat'] ?>
+                            </td>
+                            <td>
+                                <?= $mhs['id_wali'] ?>
+                            </td>
+                            <td><a href="form_edit_mahasiswa.php" class="btn sm">Edit</a></td>
+                            <td><a href="" class="btn sm danger">Delete</a></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </section>

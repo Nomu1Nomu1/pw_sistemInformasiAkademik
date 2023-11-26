@@ -1,3 +1,23 @@
+<?php
+
+include 'connection.php';
+function select($querry)
+{
+    global $db;
+    $hasil = mysqli_query($db, $querry);
+    $rows = [];
+
+    while ($row = mysqli_fetch_assoc($hasil)) {
+        $rows[] = $row;
+    }
+
+    return $rows;
+}
+
+$data_wali = select("SELECT * FROM wali_mhs");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,16 +82,17 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5">Admin Panel</h2>
+        <h2 class="title text-center mb-5" style="padding-top: 40px;">Admin Panel</h2>
         <section class="admin_panel">
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mahasiswa</button>
 
-            <div class="menu offcanvas offcanvas-start text-white" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-                aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="menu offcanvas offcanvas-start text-white" data-bs-scroll="true" tabindex="-1"
+                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
-                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -79,7 +100,8 @@
                             <a class="nav-link" href="admin.php">Admin Mahasiswa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="admin_wali_mahasiswa.php">Admin Wali Mahasiswa</a>
+                            <a class="nav-link active" aria-current="page" href="admin_wali_mahasiswa.php">Admin Wali
+                                Mahasiswa</a>
                         </li>
                     </ul>
                 </div>
@@ -96,20 +118,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td>2123535571</td>
-                    <td>Nomu Nomu</td>
-                    <td>Laki-Laki</td>
-                    <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-                    <td><a href="" class="btn sm">Edit</a></td>
-                    <td><a href="" class="btn sm danger">Delete</a></td>
-                </tbody>
-                <tbody>
-                    <td>2123535561</td>
-                    <td>Nomu Nomu</td>
-                    <td>Laki-Laki</td>
-                    <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-                    <td><a href="" class="btn sm">Edit</a></td>
-                    <td><a href="" class="btn sm danger">Delete</a></td>
+                    <?php foreach ($data_wali as $wali): ?>
+                        <tr>
+                            <td>
+                                <?= $wali['id_wali'] ?>
+                            </td>
+                            <td>
+                                <?= $wali['nama_wali'] ?>
+                            </td>
+                            <td>
+                                <?= $wali['jenis_kelamin'] ?>
+                            </td>
+                            <td>
+                                <?= $wali['alamat'] ?>
+                            </td>
+                            <td><a href="" class="btn sm">Edit</a></td>
+                            <td><a href="" class="btn sm danger">Delete</a></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </section>

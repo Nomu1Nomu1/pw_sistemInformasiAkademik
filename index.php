@@ -66,8 +66,8 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5">Home Page</h2>
-    
+        <h2 class="title text-center mb-5" style="padding-top: 40px;" >Home Page</h2>
+  
     </div>
 
 </body>

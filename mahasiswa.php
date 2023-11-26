@@ -1,3 +1,23 @@
+<?php
+
+include 'connection.php';
+function select($querry)
+{
+    global $db;
+    $result = mysqli_query($db, $querry);
+    $rows = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+
+    return $rows;
+}
+
+$data_mhs = select("SELECT * FROM mahasiswa");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,16 +69,15 @@
                             <a class="nav-link" href="wali_mahasiswa.php">Wali Mahasiswa</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Profile
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Login</i></a></li>
                             </ul>
                         </li>
-                        <img src="image/Aqua Minato.jpg" alt="Logo" class="image_profile justify-content-end" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                        <img src="image/Aqua Minato.jpg" alt="Logo" class="image_profile justify-content-end" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     </ul>
                 </div>
             </div>
@@ -66,8 +85,8 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5">Data Mahasiswa</h2>
-        <table class="table table-striped text-center mt-3">
+        <h2 class="title-page title text-center mb-5" style="padding-top: 40px;">Data Mahasiswa</h2>
+        <table class="table table-striped mt-3">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -81,14 +100,32 @@
                 </tr>
             </thead>
             <tbody>
-                <td>37255</td>
-                <td>1526492378</td>
-                <td>Nomu Nomu</td>
-                <td>Laki-Laki</td>
-                <td>Informatika</td>
-                <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
-                <td>2</td>
-                <td><a href="form_edit_mahasiswa.php" class="btn sm">Edit</a></td>
+                <?php foreach ($data_mhs as $mhs): ?>
+                    <tr>
+                        <td>
+                            <?= $mhs['id_mhs'] ?>
+                        </td>
+                        <td>
+                            <?= $mhs['nim'] ?>
+                        </td>
+                        <td>
+                            <?= $mhs['nama'] ?>
+                        </td>
+                        <td>
+                            <?= $mhs['jenis_kelamin'] ?>
+                        </td>
+                        <td>
+                            <?= $mhs['jurusan'] ?>
+                        </td>
+                        <td>
+                            <?= $mhs['alamat'] ?>
+                        </td>
+                        <td>
+                            <?= $mhs['id_wali'] ?>
+                        </td>
+                        <td><a href="form_edit_mahasiswa.php" class="btn sm">Edit</a></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
