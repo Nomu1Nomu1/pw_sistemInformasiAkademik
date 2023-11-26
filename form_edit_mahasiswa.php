@@ -40,10 +40,10 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="mahasiswa.php">Mahasiswa </a>
+                            <a class="nav-link active" href="mahasiswa.php">Mahasiswa </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="wali_mahasiswa.php">Wali Mahasiswa</a>

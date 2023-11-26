@@ -88,7 +88,7 @@
                 <td>Informatika</td>
                 <td>Klaruan, Palur, RT 03 RW 15, Mojolaban</td>
                 <td>2</td>
-                <td><a href="form_edit_mahasiswa.html" class="btn sm">Edit</a></td>
+                <td><a href="form_edit_mahasiswa.php" class="btn sm">Edit</a></td>
             </tbody>
         </table>
     </div>
