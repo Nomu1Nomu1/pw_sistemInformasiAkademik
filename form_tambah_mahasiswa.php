@@ -2,6 +2,20 @@
 
 include 'config/app.php';
 
+if (isset($_POST['tambah'])) {
+    if (create_data($_POST) > 0) {
+        echo "<script>
+                alert('Data berhasil ditambahkan');
+                document.location.href = 'admin.php';
+            </script>";
+    }else{
+        echo "<script>
+                alert('Data gagal ditambahkan');
+                document.location.href = 'admin.php';
+            </script>";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,42 +44,57 @@ include 'config/app.php';
         <div>
             <form action="" method="post">
                 <div class="mb-2">
-                    <label for="idInput" class="form-label">ID</label>
-                    <input maxlength="4" type="text" class="form-control" id="idInput" placeholder="Masukkan 4 angka">
-                </div>
-                <div class="mb-2">
                     <label for="nimInput" class="form-label">NIM</label>
-                    <input maxlength="9" type="text" class="form-control" id="nimInput">
+                    <input maxlength="9" type="text" class="form-control" name="nim" id="nimInput">
                 </div>
                 <div class="mb-2">
                     <label for="namaInput" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="namaInput">
+                    <input type="text" class="form-control" name="nama" id="namaInput">
                 </div>
                 <div class="mb-2 ">
                     <label class="form-label">Jenis Kelamin</label>
                     <div>
-                        <input class="form-check-input" name="flexRadioDefault" type="radio" id="jkInput1">
+                        <input class="form-check-input" name="jenis_kelamin" type="radio" id="jkInput1">
                         <label class="form-check-label" for="jkInput1">Pria</label>
-                        <input class="form-check-input" name="flexRadioDefault" type="radio" id="jkInput2">
+                        <input class="form-check-input" name="jenis_kelamin" type="radio" id="jkInput2">
                         <label class="form-check-label" for="jkInput2">Wanita</label>
                     </div>
                 </div>
                 <div class="mb-2">
                     <label for="jurusanInput" class="form-label">Jurusan</label>
-                    <input type="text" class="form-control" id="jurusanInput">
+                    <input type="text" class="form-control" name="jurusan" id="jurusanInput">
                 </div>
                 <div class="mb-2">
                     <label for="alamatInput" class="form-label">Alamat</label>
-                    <input type="text" class="form-control" id="alamatInput">
+                    <input type="text" class="form-control" name="alamat" id="alamatInput">
                 </div>
                 <div class="mb-2">
                     <label for="idwaliInput" class="form-label">ID wali</label>
-                    <input type="text" class="form-control" id="idwaliInput">
+                    <input type="text" class="form-control" name="id_wali" id="idwaliInput">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#modalSubmit">Submit</button>
+                <div class="modal fade" id="modalSubmit" tabindex="-1" aria-labelledby="submitModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="submitModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Apakah anda yakin?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
 </body>
-
 </html>
