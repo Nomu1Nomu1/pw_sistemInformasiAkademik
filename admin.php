@@ -1,18 +1,7 @@
 <?php
 
-include 'connection.php';
-function select($querry)
-{
-    global $db;
-    $result = mysqli_query($db, $querry);
-    $rows = [];
+include 'config/app.php';
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
-    }
-
-    return $rows;
-}
 
 $data_mhs = select("SELECT * FROM mahasiswa");
 

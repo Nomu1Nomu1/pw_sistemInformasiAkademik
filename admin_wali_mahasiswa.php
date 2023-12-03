@@ -1,18 +1,6 @@
 <?php
 
-include 'connection.php';
-function select($querry)
-{
-    global $db;
-    $hasil = mysqli_query($db, $querry);
-    $rows = [];
-
-    while ($row = mysqli_fetch_assoc($hasil)) {
-        $rows[] = $row;
-    }
-
-    return $rows;
-}
+include 'config/app.php';
 
 $data_wali = select("SELECT * FROM wali_mhs");
 
