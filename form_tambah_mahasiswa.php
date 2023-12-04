@@ -45,32 +45,32 @@ if (isset($_POST['tambah'])) {
             <form action="" method="post">
                 <div class="mb-2">
                     <label for="nimInput" class="form-label">NIM</label>
-                    <input maxlength="9" type="text" class="form-control" name="nim" id="nimInput">
+                    <input maxlength="9" type="text" class="form-control" name="nim" id="nimInput" required>
                 </div>
                 <div class="mb-2">
                     <label for="namaInput" class="form-label">Nama</label>
-                    <input type="text" class="form-control" name="nama" id="namaInput">
+                    <input type="text" class="form-control" name="nama" id="namaInput" required>
                 </div>
                 <div class="mb-2 ">
                     <label class="form-label">Jenis Kelamin</label>
                     <div>
-                        <input class="form-check-input" name="jenis_kelamin" type="radio" id="jkInput1">
+                        <input class="form-check-input" value="Pria" name="jenis_kelamin" type="radio" id="jkInput1">
                         <label class="form-check-label" for="jkInput1">Pria</label>
-                        <input class="form-check-input" name="jenis_kelamin" type="radio" id="jkInput2">
+                        <input class="form-check-input" value="Wanita" name="jenis_kelamin" type="radio" id="jkInput2">
                         <label class="form-check-label" for="jkInput2">Wanita</label>
                     </div>
                 </div>
                 <div class="mb-2">
                     <label for="jurusanInput" class="form-label">Jurusan</label>
-                    <input type="text" class="form-control" name="jurusan" id="jurusanInput">
+                    <input type="text" class="form-control" name="jurusan" id="jurusanInput" required>
                 </div>
                 <div class="mb-2">
                     <label for="alamatInput" class="form-label">Alamat</label>
-                    <input type="text" class="form-control" name="alamat" id="alamatInput">
+                    <input type="text" class="form-control" name="alamat" id="alamatInput" required>
                 </div>
                 <div class="mb-2">
                     <label for="idwaliInput" class="form-label">ID wali</label>
-                    <input type="text" class="form-control" name="id_wali" id="idwaliInput">
+                    <input type="text" class="form-control" name="id_wali" id="idwaliInput" required>
                 </div>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#modalSubmit">Submit</button>
@@ -79,7 +79,7 @@ if (isset($_POST['tambah'])) {
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="submitModalLabel">Modal title</h1>
+                                <h1 class="modal-title fs-5" id="submitModalLabel">Confirmation</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>

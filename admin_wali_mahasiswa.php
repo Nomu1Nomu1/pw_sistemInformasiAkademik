@@ -73,7 +73,7 @@ $data_wali = select("SELECT * FROM wali_mhs");
         <h2 class="title text-center mb-5" style="padding-top: 40px;">Admin Panel</h2>
         <section class="admin_panel">
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mahasiswa</button>
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Wali Mahasiswa</button>
 
             <div class="menu offcanvas offcanvas-start text-white" data-bs-scroll="true" tabindex="-1"
                 id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">

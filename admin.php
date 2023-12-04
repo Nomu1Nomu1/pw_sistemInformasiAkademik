@@ -132,14 +132,14 @@ $data_mhs = select("SELECT * FROM mahasiswa");
                             <td>
                                 <?= $mhs['id_wali'] ?>
                             </td>
-                            <td><a href="form_edit_mahasiswa.php" class="btn sm">Edit</a></td>
+                            <td><a href="form_edit_mahasiswa.php?id_mhs=<?= $mhs['id_mhs']; ?>" class="btn sm">Edit</a></td>
                             <td><a href="" class="btn sm danger">Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </section>
-        <a class="btn btn-primary mt-3" href="#" role="button">Tambah Data</a>
+        <a class="btn btn-primary mt-3" href="form_tambah_mahasiswa.php" role="button">Tambah Data</a>
     </div>
 
 </body>
