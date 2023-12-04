@@ -55,7 +55,7 @@ if (isset($_POST['tambah'])) {
                     <label class="form-label">Jenis Kelamin</label>
                     <div>
                         <input class="form-check-input" value="Pria" name="jenis_kelamin" type="radio" id="jkInput1">
-                        <label class="form-check-label" for="jkInput1">Pria</label>
+                        <label class="form-check-label" for="jkInput1" ch>Pria</label>
                         <input class="form-check-input" value="Wanita" name="jenis_kelamin" type="radio" id="jkInput2">
                         <label class="form-check-label" for="jkInput2">Wanita</label>
                     </div>

@@ -1,3 +1,27 @@
+<?php
+
+include 'config/app.php';
+
+$id_mhs = (int) $_GET['id_mhs'];
+
+$mahasiswa = select("SELECT * FROM mahasiswa WHERE id_mhs = $id_mhs")[0];
+
+if (isset($_POST['edit'])) {
+    if (update_data($_POST) > 0) {
+        echo "<script>
+                alert('Data berhasil ditambahkan');
+                document.location.href = 'admin.php';
+            </script>";
+    } else {
+        echo "<script>
+                alert('Data gagal ditambahkan');
+                document.location.href = 'admin.php';
+            </script>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,57 +41,81 @@
 </head>
 
 <body class="vh-100 overflow-hidden">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #242526;">
-        <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#">Informasi Akademik</a>
-            <!-- Toggle btn -->
-            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Side Bar -->
-            <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <!-- Sidebar header -->
-                <div class="offcanvas-header text-white border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Informasi Akademik</h5>
-                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                    <!-- Sidebar body -->
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="mahasiswa.php">Mahasiswa </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="wali_mahasiswa.php">Wali Mahasiswa</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Profile
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Login</i></a></li>
-                            </ul>
-                        </li>
-                        <img src="image/Aqua Minato.jpg" alt="Logo" class="image_profile justify-content-end" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <div class="container mt-5">
-        <h2 class="title text-center mb-5">Form Mahasiswa</h2>
-        
+
+    <div class="container mt-3">
+        <h2 class="title text-center mb-3" style="padding-top: 40px;">Edit Mahasiswa</h2>
+        <div>
+            <form action="" method="post">
+                <input type="hidden" name="id_mhs" value="<?= $mahasiswa['id_mhs'] ?>">
+                <fieldset disabled>
+                    <div class="mb-2">
+                        <label for="nimInput" class="form-label">NIM</label>
+                        <input maxlength="9" type="text" class="form-control" value="<?= $mahasiswa['nim'] ?>"
+                            name="nim" id="nimInput">
+                    </div>
+                </fieldset>
+                <div class="mb-2">
+                    <label for="namaInput" class="form-label">Nama</label>
+                    <input type="text" class="form-control" value="<?= $mahasiswa['nama'] ?>" name="nama" id="namaInput">
+                </div>
+                <fieldset disabled="disabled">
+                    <div class="mb-2 ">
+                        <label class="form-label">Jenis Kelamin</label>
+                        <div>
+                            <input class="form-check-input" name="jenis_kelamin" value="Pria" type="radio" id="jkInput1" required
+                                <?php if ($mahasiswa['jenis_kelamin'] == 'Pria') {
+                                    echo "checked";
+                                } ?>>
+                            <label class="form-check-label" for="jkInput1">Pria</label>
+                            <input class="form-check-input" name="jenis_kelamin" value="Wanita" type="radio" id="jkInput2"
+                            <?php if ($mahasiswa['jenis_kelamin'] == 'Wanita') {
+                                    echo "checked";
+                                } ?>>
+                            <label class="form-check-label" for="jkInput2">Wanita</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="mb-2">
+                    <label for="jurusanInput" class="form-label">Jurusan</label>
+                    <input type="text" class="form-control" value="<?= $mahasiswa['jurusan'] ?>" name="jurusan"
+                        id="jurusanInput">
+                </div>
+                <div class="mb-2">
+                    <label for="alamatInput" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" value="<?= $mahasiswa['alamat'] ?>" name="alamat"
+                        id="alamatInput">
+                </div>
+                <fieldset disabled="disabled">
+                    <div class="mb-2">
+                        <label for="idwaliInput" class="form-label">ID wali</label>
+                        <input type="text" class="form-control" value="<?= $mahasiswa['id_wali'] ?>" name="id_wali"
+                            id="idwaliInput">
+                    </div>
+                </fieldset>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#modalSubmit">Submit</button>
+                <div class="modal fade" id="modalSubmit" tabindex="-1" aria-labelledby="submitModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="submitModalLabel">Confirmation</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Apakah anda yakin?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                <button type="submit" name="edit" class="btn btn-primary">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 

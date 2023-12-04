@@ -49,9 +49,13 @@ function update_data($post)
     $alamat = $post['alamat'];
     $id_wali = $post['id_wali'];
 
-    $query = "UPDATE mahasiswa SET nim = '$nim', nama = '$nama', jenis_kelamin = '$jenis_kelamin', jurusan = '$jurusan', alamat = '$alamat', id_wali = '$id_wali' WHERE id_mhs = '$id_mhs'";
+    $query = "UPDATE mahasiswa SET nama = '$nama',  jurusan = '$jurusan', alamat = '$alamat' WHERE id_mhs = '$id_mhs'";
 
-    mysqli_query($db, $query);
+    $result = mysqli_query($db, $query);
+
+    if (!$result) {
+        die("Query failed. Error: " . mysqli_error($db));
+    }
 
     return mysqli_affected_rows($db);
 
