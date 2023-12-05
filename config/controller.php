@@ -34,6 +34,22 @@ function create_data($post)
     return mysqli_affected_rows($db);
 
 }
+function create_data_wali($post)
+{
+
+    global $db;
+
+    $nama_wali = $post['nama_wali'];
+    $jenis_kelamin = $post['jenis_kelamin'];
+    $alamat = $post['alamat'];
+
+    $query = "INSERT INTO wali_mhs VALUES (null, '$nama_wali', '$jenis_kelamin', '$alamat')";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+
+}
 
 // update data
 
@@ -50,6 +66,29 @@ function update_data($post)
     $id_wali = $post['id_wali'];
 
     $query = "UPDATE mahasiswa SET nama = '$nama',  jurusan = '$jurusan', alamat = '$alamat' WHERE id_mhs = '$id_mhs'";
+
+    $result = mysqli_query($db, $query);
+
+    if (!$result) {
+        die("Query failed. Error: " . mysqli_error($db));
+    }
+
+    return mysqli_affected_rows($db);
+
+}
+function update_data_main($post)
+{
+    global $db;
+
+    $id_mhs_main = $post['id_mhs'];
+    $nim_main = $post['nim'];
+    $nama_main = $post['nama'];
+    $jenis_kelamin_main = $post['jenis_kelamin'];
+    $jurusan_main = $post['jurusan'];
+    $alamat_main = $post['alamat'];
+    $id_wali_main = $post['id_wali'];
+
+    $query = "UPDATE mahasiswa SET nama = '$nama_main',  jurusan = '$jurusan_main', alamat = '$alamat_main' WHERE id_mhs = '$id_mhs_main'";
 
     $result = mysqli_query($db, $query);
 
@@ -78,5 +117,4 @@ function update_data_wali($post)
     }
 
     return mysqli_affected_rows($db);
-
 }

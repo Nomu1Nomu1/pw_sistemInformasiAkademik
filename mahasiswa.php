@@ -112,7 +112,7 @@ $data_mhs = select("SELECT * FROM mahasiswa");
                         <td>
                             <?= $mhs['id_wali'] ?>
                         </td>
-                        <td><a href="form_edit_mahasiswa.php" class="btn sm">Edit</a></td>
+                        <td><a href="form_edit_mahasiswa_main.php?id_wali=<?= $mhs['id_mhs'];?>" class="btn sm">Edit</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

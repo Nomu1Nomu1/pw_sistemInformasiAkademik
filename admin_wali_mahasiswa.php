@@ -127,7 +127,7 @@ $data_wali = select("SELECT * FROM wali_mhs");
                 </tbody>
             </table>
         </section>
-        <a class="btn btn-primary" href="#" role="button">Tambah Data</a>
+        <a class="btn btn-primary" href="form_tambah_wali_mhs.php" role="button">Tambah Data</a>
     </div>
 
 </body>
