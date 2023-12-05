@@ -76,29 +76,6 @@ function update_data($post)
     return mysqli_affected_rows($db);
 
 }
-function update_data_main($post)
-{
-    global $db;
-
-    $id_mhs_main = $post['id_mhs'];
-    $nim_main = $post['nim'];
-    $nama_main = $post['nama'];
-    $jenis_kelamin_main = $post['jenis_kelamin'];
-    $jurusan_main = $post['jurusan'];
-    $alamat_main = $post['alamat'];
-    $id_wali_main = $post['id_wali'];
-
-    $query = "UPDATE mahasiswa SET nama = '$nama_main',  jurusan = '$jurusan_main', alamat = '$alamat_main' WHERE id_mhs = '$id_mhs_main'";
-
-    $result = mysqli_query($db, $query);
-
-    if (!$result) {
-        die("Query failed. Error: " . mysqli_error($db));
-    }
-
-    return mysqli_affected_rows($db);
-
-}
 function update_data_wali($post)
 {
     global $db;
@@ -115,6 +92,28 @@ function update_data_wali($post)
     if (!$result) {
         die("Query failed. Error: " . mysqli_error($db));
     }
+
+    return mysqli_affected_rows($db);
+}
+
+// delete data
+function delete_data($id_mhs)
+{
+    global $db;
+
+    $query = "DELETE FROM mahasiswa WHERE id_mhs = '$id_mhs'";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+}
+function delete_data_wali($id_wali)
+{
+    global $db;
+
+    $query = "DELETE FROM wali_mhs WHERE id_wali = '$id_wali'";
+
+    mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
 }
