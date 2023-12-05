@@ -60,3 +60,23 @@ function update_data($post)
     return mysqli_affected_rows($db);
 
 }
+function update_data_wali($post)
+{
+    global $db;
+
+    $id_wali = $post['id_wali'];
+    $nama_wali = $post['nama_wali'];
+    $jenis_kelamin = $post['jenis_kelamin'];
+    $alamat = $post['alamat'];
+
+    $query = "UPDATE wali_mhs SET nama_wali = '$nama_wali', alamat = '$alamat' WHERE id_wali = '$id_wali'";
+
+    $result = mysqli_query($db, $query);
+
+    if (!$result) {
+        die("Query failed. Error: " . mysqli_error($db));
+    }
+
+    return mysqli_affected_rows($db);
+
+}

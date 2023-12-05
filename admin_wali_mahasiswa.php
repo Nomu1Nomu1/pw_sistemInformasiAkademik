@@ -120,7 +120,7 @@ $data_wali = select("SELECT * FROM wali_mhs");
                             <td>
                                 <?= $wali['alamat'] ?>
                             </td>
-                            <td><a href="" class="btn sm">Edit</a></td>
+                            <td><a href="form_edit_wali_mhs.php?id_wali=<?= $wali['id_wali'];?>" class="btn sm">Edit</a></td>
                             <td><a href="" class="btn sm danger">Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
