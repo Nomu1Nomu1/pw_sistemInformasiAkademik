@@ -1,4 +1,11 @@
 <?php
+if(!isset($_SESSION['login'])){
+    echo "<script>
+            alert('Login terlebih dahulu');
+            document.location.href = 'login.php';
+        </script>";
+    exit;
+}
 
 include 'config/app.php';
 
@@ -48,9 +55,6 @@ $data_mhs = select("SELECT * FROM mahasiswa");
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="admin.php">Admin</a>
                         </li>

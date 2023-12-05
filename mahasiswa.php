@@ -1,5 +1,13 @@
 <?php
 
+if(!isset($_SESSION['login'])){
+    echo "<script>
+            alert('Login terlebih dahulu');
+            document.location.href = 'login.php';
+        </script>";
+    exit;
+}
+
 include 'config/app.php';
 
 $data_mhs = select("SELECT * FROM mahasiswa");

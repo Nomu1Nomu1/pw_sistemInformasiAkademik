@@ -50,6 +50,21 @@ function create_data_wali($post)
     return mysqli_affected_rows($db);
 
 }
+function register($post)
+{
+
+    global $db;
+
+    $username = $post['username'];
+    $password = $post['password'];
+
+    $query = "INSERT INTO adminn VALUES (null, '$username', '$password', 'on')";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+
+}
 
 // update data
 
