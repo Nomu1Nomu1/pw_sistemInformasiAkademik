@@ -85,7 +85,6 @@ $data_mhs = select("SELECT * FROM mahasiswa");
                     <th>Jurusan</th>
                     <th>Alamat</th>
                     <th>ID Wali</th>
-                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -112,7 +111,6 @@ $data_mhs = select("SELECT * FROM mahasiswa");
                         <td>
                             <?= $mhs['id_wali'] ?>
                         </td>
-                        <td><a href="form_edit_mahasiswa_main.php?id_wali=<?= $mhs['id_mhs'];?>" class="btn sm">Edit</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -100,7 +100,6 @@ $data_wali = select("SELECT * FROM wali_mhs");
                         <td>
                             <?= $wali['alamat'] ?>
                         </td>
-                        <td><a href="" class="btn sm">Edit</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
