@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 if(!isset($_SESSION['login'])){
     echo "<script>
             alert('Login terlebih dahulu');
@@ -61,15 +64,12 @@ if(!isset($_SESSION['login'])){
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Profile
+                                Account
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="admin.php"><i class="uil uil-signin"></i>Admin</i></a></li>
-                                <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Login</i></a></li>
+                                <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Log Out</i></a></li>
                             </ul>
                         </li>
-                        <img src="image/Aqua Minato.jpg" alt="Logo" class="image_profile justify-content-end" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
                     </ul>
                 </div>
             </div>

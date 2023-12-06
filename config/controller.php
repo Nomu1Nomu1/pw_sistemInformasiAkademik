@@ -58,7 +58,7 @@ function register($post)
     $username = $post['username'];
     $password = $post['password'];
 
-    $query = "INSERT INTO adminn VALUES (null, '$username', '$password', 'on')";
+    $query = "INSERT INTO adminn VALUES (null, '$username', '$password', 'user')";
 
     mysqli_query($db, $query);
 
