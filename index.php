@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['login'])){
+if(!isset($_SESSION['login'])) {
     echo "<script>
             alert('Login terlebih dahulu');
             document.location.href = 'login.php';
@@ -62,11 +62,13 @@ if(!isset($_SESSION['login'])){
                             <a class="nav-link" href="wali_mahasiswa.php">Wali Mahasiswa</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Account
                             </a>
                             <ul class="dropdown-menu">
+                                <?php if($_SESSION['status'] == 'admin'): ?>
+                                    <li><a class="dropdown-item" href="#">Admin</a></li>
+                                <?php endif; ?>
                                 <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Log Out</i></a></li>
                             </ul>
                         </li>
@@ -77,8 +79,8 @@ if(!isset($_SESSION['login'])){
     </nav>
 
     <div class="container mt-5">
-        <h2 class="title text-center mb-5" style="padding-top: 40px;" >Home Page</h2>
-  
+        <h2 class="title text-center mb-5" style="padding-top: 40px;">Home Page</h2>
+
     </div>
 
 </body>

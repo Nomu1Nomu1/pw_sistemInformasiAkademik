@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['login'])){
+if(!isset($_SESSION['login'])) {
     echo "<script>
             alert('Login terlebih dahulu');
             document.location.href = 'login.php';
@@ -65,6 +65,7 @@ $data_wali = select("SELECT * FROM wali_mhs");
                                 Account
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Admin</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Log Out</i></a></li>
                             </ul>
                         </li>
@@ -78,7 +79,8 @@ $data_wali = select("SELECT * FROM wali_mhs");
         <h2 class="title text-center mb-5" style="padding-top: 40px;">Admin Panel</h2>
         <section class="admin_panel">
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Wali Mahasiswa</button>
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Wali
+                Mahasiswa</button>
 
             <div class="menu offcanvas offcanvas-start text-white" data-bs-scroll="true" tabindex="-1"
                 id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -111,7 +113,7 @@ $data_wali = select("SELECT * FROM wali_mhs");
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data_wali as $wali): ?>
+                    <?php foreach($data_wali as $wali): ?>
                         <tr>
                             <td>
                                 <?= $wali['id_wali'] ?>
@@ -125,8 +127,11 @@ $data_wali = select("SELECT * FROM wali_mhs");
                             <td>
                                 <?= $wali['alamat'] ?>
                             </td>
-                            <td><a href="form_edit_wali_mhs.php?id_wali=<?= $wali['id_wali'];?>" class="btn sm">Edit</a></td>
-                            <td><a href="delete_wali.php?id_wali=<?= $wali['id_wali']?>" onclick="return confirm('Data akan dihapus, Yakin?')" class="btn sm danger">Delete</a></td>
+                            <td><a href="form_edit_wali_mhs.php?id_wali=<?= $wali['id_wali']; ?>" class="btn sm">Edit</a>
+                            </td>
+                            <td><a href="delete_wali.php?id_wali=<?= $wali['id_wali'] ?>"
+                                    onclick="return confirm('Data akan dihapus, Yakin?')" class="btn sm danger">Delete</a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

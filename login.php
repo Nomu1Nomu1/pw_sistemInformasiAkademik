@@ -16,6 +16,7 @@ if (isset($_POST['login'])) {
     if ($password == $hasil['password']) {
         $_SESSION['login'] = true;
         $_SESSION['username'] = $data['username'];
+        $_SESSION['status'] = $data['status'];
         header('Location: index.php');
         exit;
     }

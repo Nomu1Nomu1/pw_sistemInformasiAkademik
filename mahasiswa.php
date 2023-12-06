@@ -71,6 +71,7 @@ $data_mhs = select("SELECT * FROM mahasiswa");
                                 Account
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Admin</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Log Out</i></a></li>
                             </ul>
                         </li>

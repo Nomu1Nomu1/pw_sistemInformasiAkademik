@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['login'])){
+if(!isset($_SESSION['login'])) {
     echo "<script>
             alert('Login terlebih dahulu');
             document.location.href = 'login.php';
@@ -71,6 +71,7 @@ $data_wali = select("SELECT * FROM wali_mhs");
                                 Account
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Admin</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Logout</i></a></li>
                             </ul>
                         </li>
@@ -93,8 +94,8 @@ $data_wali = select("SELECT * FROM wali_mhs");
                 </tr>
             </thead>
             <tbody>
-            <?php foreach ($data_wali as $wali): ?>
-                <tr>
+                <?php foreach($data_wali as $wali): ?>
+                    <tr>
                         <td>
                             <?= $wali['id_wali'] ?>
                         </td>
