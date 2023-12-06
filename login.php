@@ -1,29 +1,24 @@
 <?php
 session_start();
-
 include 'config/app.php';
 
-if (isset($_POST['login'])) {
-    $username = mysqli_real_escape_string($db, $_POST['username']);
-    $password = mysqli_real_escape_string($db, $_POST['password']);
-    $password = md5($password);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = isset($_POST['username']) ? mysqli_real_escape_string($db, $_POST['username']) : '';
+    $password = isset($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : '';
 
-    $query = mysqli_query($db, "SELECT * FROM adminn WHERE username = '$username'");
+    $query = "SELECT * FROM adminn WHERE username = '$username'";
+    $hasil = mysqli_query($db, $query);
+    $usr = mysqli_fetch_array($hasil);
 
-    $hasil = mysqli_fetch_assoc($query);
-    $data = mysqli_fetch_array($query);
+    if ($usr && md5($password) == $usr['password']) {
+        $_SESSION['login'] = 1;
+        $_SESSION['id_admin'] = $usr['id_admin'];
+        $_SESSION['username'] = $usr['username'];
+        $_SESSION['level'] = $usr['level'];
 
-    if ($password == $hasil['password']) {
-        $_SESSION['login'] = true;
-        $_SESSION['username'] = $data['username'];
-        $_SESSION['level'] = $data['level'];
         header('Location: index.php');
-        exit;
-    }
-    
-    $error = true;
+    } 
 }
-
 ?>
 
 <!DOCTYPE html>

@@ -1,4 +1,14 @@
-<div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #242526;">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">Informasi Akademik</a>
+            <!-- Toggle btn -->
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Side Bar -->
+            <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <!-- Sidebar header -->
                 <div class="offcanvas-header text-white border-bottom">
@@ -23,8 +33,11 @@
                                 Account
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Log Out</i></a></li>
+                                <li><a class="dropdown-item" href="logout.php"><i class="uil uil-signin"></i>Log Out</i></a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </nav>

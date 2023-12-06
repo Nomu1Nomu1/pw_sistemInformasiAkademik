@@ -65,8 +65,7 @@ $data_wali = select("SELECT * FROM wali_mhs");
                                 Account
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Admin</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="uil uil-signin"></i>Log Out</i></a></li>
+                                <li><a class="dropdown-item" href="logout.php"><i class="uil uil-signin"></i>Log Out</i></a></li>
                             </ul>
                         </li>
                     </ul>
