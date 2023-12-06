@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
     if ($password == $hasil['password']) {
         $_SESSION['login'] = true;
         $_SESSION['username'] = $data['username'];
-        $_SESSION['status'] = $data['status'];
+        $_SESSION['level'] = $data['level'];
         header('Location: index.php');
         exit;
     }
@@ -51,7 +51,7 @@ if (isset($_POST['login'])) {
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form action="" method="post">
                         <h2 class="title text-center mb-3">Login</h2>
-                        <?php if (isset($error)): ?>
+                        <?php if(isset($error)): ?>
                             <div class="alert alert-danger text-center">
                                 <b>Username/password salah</b>
                             </div>
