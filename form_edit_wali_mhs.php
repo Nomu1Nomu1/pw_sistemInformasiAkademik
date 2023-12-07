@@ -81,7 +81,7 @@ if (isset($_POST['edit_wali'])) {
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="submitModalLabel">Confirmation</h1>
+                                <h1 class="modal-title fs-5" id="submitModalLabel">Confirm</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
